@@ -10,11 +10,7 @@ public class Main {
         List<String> names =new ArrayList<>();
         names.addAll(Arrays.asList("janek","Juzek","Felek", "Marek", "Kaśka", "Julka"));
 
-        Nameator nameator = (String s)->{
-            return s.toUpperCase();
-        };
 
-        System.out.println(nameator.getName("Janek"));
 
         //inny sposób utworzenia listy
         //List<String>names = new ArrayList<>(Arrays.asList("Janek","Juzek","Felek", "Marek", "Kaśka", "Julka"));
@@ -49,6 +45,18 @@ public class Main {
 
         //using lamba expression and functional operations
         players.forEach((player)-> System.out.println(player + ";"));
+
+        System.out.println("--------");
+
+        //        Nameator nameator = (String s)->{
+//            return s.toUpperCase();
+//        };
+        //skrócony zapis lambt
+        Nameator nameator = s->s.toUpperCase();
+        Nameator nameator1 = s->s.toLowerCase();
+        Nameator nameator2 = s-> String.valueOf(s.length());
+
+        System.out.println(nameator2.getName("Janek"));
 
 
 
