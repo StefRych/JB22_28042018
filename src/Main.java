@@ -51,19 +51,26 @@ public class Main {
         //        Nameator nameator = (String s)->{
 //            return s.toUpperCase();
 //        };
-        //skrócony zapis lambt
-        Nameator nameator = s->s.toUpperCase();
-        Nameator nameator1 = s->s.toLowerCase();
-        Nameator nameator2 = s-> String.valueOf(s.length());
+        //skrócony zapis lamba
+//        Nameator nameator = s->s.toUpperCase();
+//        Nameator nameator1 = s->s.toLowerCase();
+//        Nameator nameator2 = s-> String.valueOf(s.length());
+//
+//        System.out.println(nameator2.getName("Janek"));
 
-        System.out.println(nameator2.getName("Janek"));
-
-
+        showMe(s->s.toLowerCase(),"HEJO");
+        showMe(s->s.toUpperCase(),"hejo");
+        showMe(s->s.concat(" - to doklejka z lamby "),"hejo");
+        showMe(s->String.valueOf(s.charAt(0)),"hejo");
+        showMe(s-> String.valueOf(s.length()), "Helo");
+        showMe(s-> String.valueOf(s.charAt(3)),"Marta");
 
 
 
     }
-    //zmiana
-    //zmiana 2
-    //zmiana3
+    public static void showMe(Nameator nameator,String name){
+        System.out.println(nameator.getName(name));
+
+    }
+
 }
