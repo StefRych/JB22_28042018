@@ -58,12 +58,39 @@ public class Main {
 //
 //        System.out.println(nameator2.getName("Janek"));
 
+
         showMe(s->s.toLowerCase(),"HEJO");
         showMe(s->s.toUpperCase(),"hejo");
         showMe(s->s.concat(" - to doklejka z lamby "),"hejo");
         showMe(s->String.valueOf(s.charAt(0)),"hejo");
         showMe(s-> String.valueOf(s.length()), "Helo");
-        showMe(s-> String.valueOf(s.charAt(3)),"Marta");
+        showMe(s-> String.valueOf(s.getBytes()),"jano");
+        showMe(s->s +"+++++","morda");
+        showMe(s->{for(int i=0; i<6;i++){s+="ss";}return s;},"tata");
+
+        //lamba w skróconym zapisie (sama dodaje ciało i sna dodaje return jesli koniezny)
+        System.out.println("lamba w skróconym zapisie (sama dodaje ciało i sna dodaje return jesli konieczny");
+        showMe(s->String.valueOf(s.charAt(0)),"hejo");
+
+        //lamba bez skrócone zapisu
+        System.out.println("lamba bez skrócone zapisu");
+        showMe((String s) -> {
+            return String.valueOf(s.charAt(0));
+        }, "hejo");
+
+
+        //== klasa anonimowa z przesłonięiem metody
+        System.out.println("klasa anonimowa z przesłonięiem metody");
+        showMe(new Nameator() {
+            @Override
+            public String getName(String s) {
+                return s.concat("coś tam --");
+            }
+        },"janek");
+
+
+
+
 
 
 
