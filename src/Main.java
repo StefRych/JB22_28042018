@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.IntBinaryOperator;
 
 public class Main {
@@ -80,13 +81,13 @@ public class Main {
 
 
         //== klasa anonimowa z przesłonięiem metody
-        System.out.println("klasa anonimowa z przesłonięiem metody");
-        showMe(new Nameator() {
-            @Override
-            public String getName(String s) {
-                return s.concat("coś tam --");
-            }
-        },"janek");
+        //System.out.println("klasa anonimowa z przesłonięiem metody");
+//        showMe(new Nameator() {
+//            @Override
+//            public String getName(String s) {
+//                return s.concat("coś tam --");
+//            }
+//        },"janek");
 
 
 
@@ -95,8 +96,13 @@ public class Main {
 
 
     }
-    public static void showMe(Nameator nameator,String name){
-        System.out.println(nameator.getName(name));
+//    public static void showMe(Nameator nameator,String name){
+//        System.out.println(nameator.getName(name));
+//
+//    }
+
+    public static void showMe(Function<String,String> nameator, String name){
+        System.out.println(nameator.apply(name));
 
     }
 
